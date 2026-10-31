@@ -1,69 +1,108 @@
-import Image from "next/image";
+import Header from '@/components/Header';
+import { ArrowRight, Coffee, Flame, Globe2, CupSoda } from 'lucide-react';
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.js
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main className="min-h-screen bg-pochi-cream font-sans">
+      <Header />
+
+      {/* HERO SECTION */}
+      <section className="relative bg-pochi-blue text-white overflow-hidden">
+        {/* Imagen de fondo / Overlay de café */}
+        <div className="absolute inset-0 z-0 opacity-25 bg-[url('https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=1600&auto=format&fit=crop')] bg-cover bg-center" />
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-20 md:pt-24 md:pb-32">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            {/* TEXTOS PRINCIPALES Y BOTONES */}
+            <div className="lg:col-span-7 space-y-6">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold tracking-tight text-white leading-tight">
+                Café <br />
+                de especialidad <br />
+                <span className="text-white">tostado en Santiago</span>
+              </h1>
+
+              <p className="text-base sm:text-lg text-gray-300 max-w-xl font-light leading-relaxed">
+                Cafés honestos, llenos de historia. <br />
+                Tostamos en pequeños lotes para que disfrutes lo mejor de cada origen.
+              </p>
+
+              <div className="flex flex-wrap gap-4 pt-2">
+                <a
+                  href="#cafes"
+                  className="inline-flex items-center gap-2 bg-pochi-orange hover:bg-pochi-orange-hover text-white font-semibold px-6 py-3.5 rounded-full text-sm transition-all transform hover:-translate-y-0.5 shadow-lg"
+                >
+                  Ver nuestros cafés
+                  <ArrowRight className="w-4 h-4" />
+                </a>
+
+                <a
+                  href="#historia"
+                  className="inline-flex items-center gap-2 bg-transparent hover:bg-white/10 text-white border border-white/40 font-medium px-6 py-3.5 rounded-full text-sm transition-all"
+                >
+                  Conoce nuestra historia
+                </a>
+              </div>
+            </div>
+
+            {/* IMAGEN DE LA TAZA / PRODUCTO */}
+            <div className="lg:col-span-5 flex justify-center">
+              <div className="relative w-full max-w-md aspect-square rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+              {/*Ingresa imagen del cafe en el src*/}
+                <img
+                  src="https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=800&auto=format&fit=crop"
+                  alt="Taza de café Pochi Coffee Roasters"
+                  className="w-full h-full object-cover object-center"
+                />
+              </div>
+            </div>
+
+          </div>
+
+          {/* 4 PILARES INFERIORES DEL HERO */}
+          <div className="mt-16 pt-12 border-t border-white/15 grid grid-cols-2 md:grid-cols-4 gap-6 text-center md:text-left">
+            
+            <div className="flex flex-col md:flex-row items-center md:items-start gap-3">
+              <Coffee className="w-7 h-7 text-pochi-orange shrink-0 stroke-[1.5]" />
+              <div>
+                <h3 className="text-sm font-semibold text-white">Café de especialidad</h3>
+                <p className="text-xs text-gray-400 mt-0.5">Granos seleccionados de alta puntuación</p>
+              </div>
+            </div>
+
+            <div className="flex flex-col md:flex-row items-center md:items-start gap-3">
+              <Flame className="w-7 h-7 text-pochi-orange shrink-0 stroke-[1.5]" />
+              <div>
+                <h3 className="text-sm font-semibold text-white">Tueste en pequeños lotes</h3>
+                <p className="text-xs text-gray-400 mt-0.5">Control de calidad y frescura</p>
+              </div>
+            </div>
+
+            <div className="flex flex-col md:flex-row items-center md:items-start gap-3">
+              <Globe2 className="w-7 h-7 text-pochi-orange shrink-0 stroke-[1.5]" />
+              <div>
+                <h3 className="text-sm font-semibold text-white">Orígenes seleccionados</h3>
+                <p className="text-xs text-gray-400 mt-0.5">Colombia, Bolivia, Perú</p>
+              </div>
+            </div>
+
+            <div className="flex flex-col md:flex-row items-center md:items-start gap-3">
+              <CupSoda className="w-7 h-7 text-pochi-orange shrink-0 stroke-[1.5]" />
+              <div>
+                <h3 className="text-sm font-semibold text-white">Para cada forma de preparar</h3>
+                <p className="text-xs text-gray-400 mt-0.5">Molido a medida o en grano</p>
+              </div>
+            </div>
+
+          </div>
+
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </section>
+
+      {/* ESPACIO PARA SIGUIENTE SECCIÓN (NUESTROS CAFÉS) */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center text-pochi-gray">
+        <p className="text-sm">Siguiente sección: Catálogo "Nuestros cafés"</p>
+      </section>
+    </main>
   );
 }
