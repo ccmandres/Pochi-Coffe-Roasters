@@ -10,3 +10,7 @@
   --color-pochi-gray: #6B7280;      /* Subtítulos */
   --color-pochi-border: #E5E7EB;    /* Bordes suaves */
 }
+
+html {
+  scroll-behavior: smooth;
+}

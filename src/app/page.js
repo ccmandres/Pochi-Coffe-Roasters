@@ -1,4 +1,9 @@
+import BrewingGuide from '@/components/BrewingGuide';
+import DripBags from '@/components/DripBags';
+import Footer from '@/components/Footer';
 import Header from '@/components/Header';
+import OurStory from '@/components/OurStory';
+import ProductCatalog from '@/components/ProductCatalog';
 import { ArrowRight, Coffee, Flame, Globe2, CupSoda } from 'lucide-react';
 
 export default function Home() {
@@ -101,8 +106,12 @@ export default function Home() {
 
       {/* ESPACIO PARA SIGUIENTE SECCIÓN (NUESTROS CAFÉS) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center text-pochi-gray">
-        <p className="text-sm">Siguiente sección: Catálogo "Nuestros cafés"</p>
+        <ProductCatalog />
       </section>
+      <DripBags />
+      <OurStory/>
+      <BrewingGuide />
+      <Footer />
     </main>
   );
 }
