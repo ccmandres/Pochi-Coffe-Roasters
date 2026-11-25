@@ -30,6 +30,15 @@ La marca combina estética artesanal cálida con contrastes limpios y modernos:
 * **Tipografía:** Combinación de títulos con estilo `font-serif` y cuerpos de texto limpios en `font-sans`.
 
 ---
+# Instalar dependencias
+npm install
+
+# Instalar cliente de Supabase (para TAR-011)
+npm install @supabase/supabase-js
+
+# Levantar servidor de desarrollo
+npm run dev
+
 
 ## 📁 Estructura Actual del Proyecto
 
